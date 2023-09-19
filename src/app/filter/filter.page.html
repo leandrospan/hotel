@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button color="light" defaultHref="search-chef"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Filtros</ion-title>
+    <ion-title slot="end">Reset</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="upperBox">
+    <h3>Tipo de Carne</h3>
+    <ion-list>
+      <ion-radio-group (ionChange)="tipoCarneChange($event)" [value]="filtros.tipo_carne">
+        <ion-item>
+          <ion-label>Café da manhã</ion-label>
+          <ion-radio value="cafedamanha"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Jantar</ion-label>
+          <ion-radio value="jantar"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Almoço</ion-label>
+          <ion-radio value="almoco"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Lanche</ion-label>
+          <ion-radio value="lanche"></ion-radio>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>Outros</ion-label>
+          <ion-radio value="outros"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </div>
+  <div class="upperBox">
+    <h3>Cozinha</h3>
+    <ion-radio-group [value]="filtros.cozinha">
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Americana</ion-label>
+            <ion-radio item-left value="americana"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Asiática</ion-label>
+            <ion-radio item-left value="asia"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Australiana</ion-label>
+            <ion-radio item-left value="australiana"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Indiana</ion-label>
+            <ion-radio item-left value="indiana"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Francesa</ion-label>
+            <ion-radio item-left value="francesa"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Grega</ion-label>
+            <ion-radio item-left value="grega"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-radio-group>
+  </div>
+  <div class="upperBox">
+    <h3>Distância</h3>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-range  [value]="filtros.distancia" min="1" max="20" color="danger" [pin]="true"></ion-range>
+        <ion-label slot="end">1 km</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="upperBox">
+    <h3>Ordenar por</h3>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label>Mais Popular</ion-label>
+        <ion-toggle  [value]="filtros.popular"></ion-toggle>
+      </ion-item>
+      <hr style="border-bottom: 1px solid grey;">
+    </ion-list>
+    <ion-list>
+      <ion-radio-group [value]="filtros.ordemdepreco">
+        <ion-item>
+          <ion-label>Baixo e Alto</ion-label>
+          <ion-radio value="baixoalto"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Alto e Baixo</ion-label>
+          <ion-radio value="altobaixo"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </div>
+  <div class="upperBox">
+    <h3>Preço</h3>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-range [value]="filtros.preco" min="1" dual-knobs="true" max="20" color="primary" [pin]="true"></ion-range>
+        <ion-label slot="end">1 até 5</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="upperBox">
+    <!--ion-button expand="block" (click)="aplicarFiltros()">Aplicar Filtros</ion-button-->
+  </div>
+</ion-content>

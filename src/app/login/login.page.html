@@ -1,0 +1,49 @@
+<ion-content>
+  <div class="upper">
+    <div class="icon">
+      <ion-icon name="restaurant"></ion-icon>
+    </div>
+    <p id="login">APP DE GERENCIAMENTO DE HOTEL</p>
+  </div>
+  <div class="middle">
+    <div class="box">
+      <form #loginForm="ngForm">
+        <p>Por favor entre com a sua conta.</p>
+        <ion-item>
+          <ion-label position="floating">Endereço de email</ion-label>
+          <ion-input type="email" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="login.email" required email></ion-input>
+          <ion-icon class="ion-align-self-center" slot="end" name="mail"></ion-icon>
+        </ion-item>
+        <div *ngIf="email.invalid && email.touched">
+          <ion-text color="danger text-center">
+            <h4 style="padding-left: 20px; margin-top: 10px;">Por favor digite seu e-mail</h4>
+          </ion-text>
+        </div>
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input [type]="type ? 'password' : 'text'" placeholder="Senha" name="senha" #senha="ngModel" [(ngModel)]="login.password" required senha></ion-input>
+          <ion-icon class="ion-align-self-center" slot="end" name="eye-outline" (click)="changeType()"></ion-icon>
+        </ion-item>
+        <div *ngIf="senha.invalid && senha.touched">
+          <ion-text color="danger text-center">
+            <h4 style="padding-left: 20px; margin-top: 10px;">Por favor digite sua senha</h4>
+          </ion-text>
+        </div>
+        <p id="forgetPassword" (click)="gotToForget()">Esqueci a senha.</p>
+        <div class="btn">
+          <ion-button (click)="gotoHome()" [disabled]="loginForm">Login</ion-button>
+        </div>
+      </form>
+      <p id="media">Ou entre com sua rede social</p>
+      <div class="socialMedia">
+        <ion-icon name="logo-facebook" (click)="facebookLogin()"></ion-icon>
+        <ion-icon name="logo-twitter" (click)="twitterLogin()"></ion-icon>
+        <ion-icon name="logo-google" (click)="gmailLogin()"></ion-icon>
+      </div>
+      <div class="touchLogin" (click)="touchLogin()">
+        <ion-icon name="finger-print-outline"></ion-icon>
+        <p>Entre usando sua digital</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

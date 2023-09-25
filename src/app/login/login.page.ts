@@ -37,11 +37,19 @@ export class LoginPage implements OnInit {
   }
 
   touchLogin(){
-    
+
   }
 
   gotToForget(){
 
+  }
+
+  faceLogin(){
+
+  }
+
+  goToRegister(){
+    
   }
 
   ngOnInit() {

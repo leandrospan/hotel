@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-back-button color="light" defaultHref="search-chef"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pedidos</ion-title>
+    <ion-icon name="notifications" slot="end"></ion-icon>
+    <ion-badge id="notifications-badge-msg" color="danger">2</ion-badge>
+    <ion-icon name="cart" slot="end"></ion-icon>
+    <ion-badge id="notifications-badge" color="danger">5</ion-badge>
+    <img slot="end" src="assets/cozinheira.png">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="top">
+    <ion-segment value="recebidos">
+      <ion-segment-button value="recebidos">
+        <ion-label>Recebidos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="finalizados">
+        <ion-label>Finalizados</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div *ngFor="let pedido of pedidos">
+    <p id="data">{{pedido.data}}</p>
+    <div class="upperBox" *ngFor="let umpedido of pedido.pedido">
+      <div class="image">
+        <img src="assets/{{umpedido.imagem}}">
+      </div>
+      <div class="title">
+        <h3>{{umpedido.titulo}}</h3>
+      </div>
+    </div>
+  </div>
+</ion-content>

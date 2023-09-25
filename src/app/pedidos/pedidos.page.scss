@@ -1,0 +1,78 @@
+ion-header{
+  ion-icon{
+    font-size: 30px;
+    position: relative;
+    margin-right: 10px;
+  }
+  #notifications-badge-msg{
+    background-color: rgb(67, 7, 233);
+    position: absolute;
+    top: 5px;
+    right: 95px;
+    color: #FFFFFF;
+    z-index: 111;
+  }
+  #notifications-badge{
+    background-color: rgb(67, 7, 233);
+    position: absolute;
+    top: 5px;
+    right: 50px;
+    color: #FFFFFF;
+    z-index: 111;
+  }
+  img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}
+
+ion-content{
+  --background: #F0F0F2;
+  .top{
+    background-color: #F9F9F9;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    ion-segment{
+      margin-top: 10px;
+      border: 1px solid #F15B3A;
+      ion-segment-button{
+        --background-checked: #F15B3A;
+        --color-checked: #FFFFFF;
+        --indicator-color: #F15B3A;
+        font-size: 18px;
+        --color: #F15B3A;
+      }
+    }
+  }
+  #data{
+    padding-left: 20px;
+  }
+  .upperBox{
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 40% 35% 15% 10%;
+    grid-template-rows: 15% 35% 35% 15%;
+    gap: 5px 5px;
+    grid-template-areas: "image title title menu" "image orderId orderId orderId" "image amount status status" "image time edit edit";
+    .imagem{
+      grid-area: image;
+      img{
+        padding: 10px;
+        border-radius: 5px;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}

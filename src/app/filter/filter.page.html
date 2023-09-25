@@ -4,7 +4,7 @@
       <ion-back-button color="light" defaultHref="search-chef"></ion-back-button>
     </ion-buttons>
     <ion-title>Filtros</ion-title>
-    <ion-title slot="end">Reset</ion-title>
+    <ion-title slot="end" (click)="reset()">Reset</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -38,7 +38,7 @@
   </div>
   <div class="upperBox">
     <h3>Cozinha</h3>
-    <ion-radio-group [value]="filtros.cozinha">
+    <ion-radio-group (ionChange)="tipoCozinhaChange($event)" [value]="filtros.cozinha">
       <ion-row>
         <ion-col size="6">
           <ion-item>
@@ -83,7 +83,7 @@
     <h3>Distância</h3>
     <ion-list lines="none">
       <ion-item>
-        <ion-range  [value]="filtros.distancia" min="1" max="20" color="danger" [pin]="true"></ion-range>
+        <ion-range  (ionChange)="tipoDistanciaChange($event)" [value]="filtros.distancia" min="1" max="20" color="danger" [pin]="true"></ion-range>
         <ion-label slot="end">1 km</ion-label>
       </ion-item>
     </ion-list>
@@ -93,12 +93,12 @@
     <ion-list lines="none">
       <ion-item>
         <ion-label>Mais Popular</ion-label>
-        <ion-toggle  [value]="filtros.popular"></ion-toggle>
+        <ion-toggle (ionChange)="tipoPopularChange($event)" [value]="filtros.popular"></ion-toggle>
       </ion-item>
       <hr style="border-bottom: 1px solid grey;">
     </ion-list>
     <ion-list>
-      <ion-radio-group [value]="filtros.ordemdepreco">
+      <ion-radio-group (ionChange)="tipoOrdemPrecoChange($event)" [value]="filtros.ordemdepreco">
         <ion-item>
           <ion-label>Baixo e Alto</ion-label>
           <ion-radio value="baixoalto"></ion-radio>
@@ -114,12 +114,12 @@
     <h3>Preço</h3>
     <ion-list lines="none">
       <ion-item>
-        <ion-range [value]="filtros.preco" min="1" dual-knobs="true" max="20" color="primary" [pin]="true"></ion-range>
-        <ion-label slot="end">1 até 5</ion-label>
+        <ion-range [value]="filtros.preco" min="1" [dualKnobs]="true" max="20" color="primary" [pin]="true" [(ngModel)]="filtros.preco" (ionChange)="tipoPrecoChange($event)"></ion-range>
+        <ion-label slot="end">{{filtros.preco.lower}} até {{filtros.preco.upper}}</ion-label>
       </ion-item>
     </ion-list>
   </div>
   <div class="upperBox">
-    <!--ion-button expand="block" (click)="aplicarFiltros()">Aplicar Filtros</ion-button-->
+    <ion-button expand="block" (click)="aplicarFiltros()">Aplicar Filtros</ion-button>
   </div>
 </ion-content>

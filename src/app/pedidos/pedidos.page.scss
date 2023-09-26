@@ -59,11 +59,10 @@ ion-content{
     background-color: #FFFFFF;
     margin-top: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    /*height: auto;*/
     height: 110px;
     display: grid;
     grid-template-columns: 40% 30% 20% 5%;
-    grid-template-rows: 7% 20% 20% 15%;
+    grid-template-rows: 10% 28% 35% 0%;
     gap: 5px 5px;
     grid-template-areas: "image title title menu" "image orderId orderId orderId" "image amount status status" "image time edit edit";
     .imagem{
@@ -71,13 +70,13 @@ ion-content{
       img{
         padding: 10px;
         border-radius: 5px;
-        height: auto;
         width: 100%;
       }
     }
     .title{
       grid-area: title;
       color: #F15B3A;
+      margin-top: -10px;
       h3{
         font-size: 14px;
       }

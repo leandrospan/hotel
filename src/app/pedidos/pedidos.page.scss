@@ -59,10 +59,11 @@ ion-content{
     background-color: #FFFFFF;
     margin-top: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    height: auto;
+    /*height: auto;*/
+    height: 110px;
     display: grid;
-    grid-template-columns: 40% 35% 15% 10%;
-    grid-template-rows: 15% 35% 35% 15%;
+    grid-template-columns: 40% 30% 20% 5%;
+    grid-template-rows: 7% 20% 20% 15%;
     gap: 5px 5px;
     grid-template-areas: "image title title menu" "image orderId orderId orderId" "image amount status status" "image time edit edit";
     .imagem{
@@ -72,6 +73,51 @@ ion-content{
         border-radius: 5px;
         height: auto;
         width: 100%;
+      }
+    }
+    .title{
+      grid-area: title;
+      color: #F15B3A;
+      h3{
+        font-size: 14px;
+      }
+    }
+    .menu{
+      grid-area: menu;
+      margin-right: 10px;
+      justify-self: center;
+    }
+    .orderId{
+      grid-area: orderId;
+      font-size: 12px;
+      p{
+        color: gray;
+      }
+    }
+    .amount{
+      grid-area: amount;
+      align-self: start;
+      justify-self: start;
+      margin-top: -25px;
+      font-size: small;
+    }
+    .status{
+      grid-area: status;
+      p{
+        margin-right: 20px;
+        margin-top: -8px;
+        font-size: 10px;
+        background: #E4F4EB;
+        padding: 5px;
+        text-align: center;
+        color: green;
+      }
+    }
+    .time{
+      grid-area: time;
+      font-size: 15px;
+      p{
+        margin-top: -30px;
       }
     }
   }

@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'pedidohist',
+    redirectTo: 'perfil',
     pathMatch: 'full'
   },
   {
@@ -35,6 +35,11 @@ const routes: Routes = [
     path: 'pedidohist',
     loadChildren: () => import('./pedidohist/pedidohist.module').then( m => m.PedidohistPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+
 
 
 

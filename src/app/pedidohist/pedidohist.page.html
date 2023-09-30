@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-back-button color="light" defaultHref="search-chef"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Histórico de Pedidos</ion-title>
+    <ion-icon name="notifications" slot="end" (click)="notificationsModal($event)"></ion-icon>
+    <ion-badge id="notifications-badge-msg" color="danger">2</ion-badge>
+    <ion-icon name="cart" slot="end"></ion-icon>
+    <ion-badge id="notifications-badge" color="danger">5</ion-badge>
+    <img slot="end" src="assets/cozinheira.png" (click)="presentModal($event)">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let pagamento of pagamentos">
+    <p id="data">{{pagamento.date}}</p>
+    <div class="upperBox" *ngFor="let item of pagamento.transactions">
+      <div class="img">
+        <img src="assets/{{item.image}}">
+      </div>
+      <div class="title">{{item.title}}</div>
+      <div class="price">{{item.amount}}</div>
+      <div class="transId">Transaction ID: #{{item.transId}}</div>
+      <div class="time">{{item.time}}</div>
+      <div class="bank">{{item.bank}}</div>
+      <div class="status" [ngStyle]="{'color': (item.status === 'SUCESSO') ? 'green' : (item.status === 'FALHOU') ? 'red' : 'orange'}">{{item.status}}</div>
+    </div>
+  </div>
+</ion-content>

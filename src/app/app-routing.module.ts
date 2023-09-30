@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'pedidohist',
     pathMatch: 'full'
   },
   {
@@ -18,10 +18,24 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'pedidos',
     loadChildren: () => import('./pedidos/pedidos.module').then( m => m.PedidosPageModule)
   },
+  {
+    path: 'pedido',
+    loadChildren: () => import('./popup/pedido/pedido.module').then( m => m.PedidoPageModule)
+  },
+  {
+    path: 'pedidomenu',
+    loadChildren: () => import('./popup/pedidomenu/pedidomenu.module').then( m => m.PedidomenuPageModule)
+  },
+  {
+    path: 'pedidohist',
+    loadChildren: () => import('./pedidohist/pedidohist.module').then( m => m.PedidohistPageModule)
+  },
+
 
 
 ];

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+import { PedidoPage } from '../popup/pedido/pedido.page';
+import { PedidomenuPage } from '../popup/pedidomenu/pedidomenu.page';
 
 @Component({
   selector: 'app-pedidos',
@@ -100,7 +103,20 @@ export class PedidosPage implements OnInit {
     ]
   }];
 
-  constructor() { }
+  constructor(public popoverController: PopoverController) { }
+
+  segmentChange(ev : any){
+    console.log(ev.detail.value);
+  }
+
+  async presentPopover(ev: any){
+    const popover = await this.popoverController.create({
+      component: PedidomenuPage,
+      event: ev,
+      translucent: true
+    });
+    await popover.present();
+  }
 
   ngOnInit() {
   }

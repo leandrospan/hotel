@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'perfil',
+    redirectTo: 'detalhes-chef',
     pathMatch: 'full'
   },
   {
@@ -39,6 +39,11 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
+  {
+    path: 'detalhes-chef',
+    loadChildren: () => import('./detalhes-chef/detalhes-chef.module').then( m => m.DetalhesChefPageModule)
+  },
+
 
 
 

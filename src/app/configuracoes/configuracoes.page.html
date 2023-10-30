@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Configurações</ion-title>
+    <ion-icon name="notifications" slot="end"></ion-icon>
+    <ion-badge id="notification-badge-msg" color="danger">2</ion-badge>
+    <ion-icon name="cart" slot="end"></ion-icon>
+    <ion-badge id="notification-badge" color="danger">5</ion-badge>
+    <img slot="end" src="assets/cozinheira.png">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4>Notification Setting</h4>
+  <ion-list>
+    <ion-item>
+      <ion-label>Application Notifications</ion-label>
+      <ion-toggle color="danger"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>SMS & Email Notifications</ion-label>
+      <ion-toggle color="warning"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

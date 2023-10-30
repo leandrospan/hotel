@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Chef List</ion-title>
+    <ion-icon name="notifications" slot="end" (click)="notificationModal($event)"></ion-icon>
+    <ion-badge id="notification-badge-msg" color="danger">2</ion-badge>
+    <ion-icon name="cart" slot="end"></ion-icon>
+    <ion-badge id="notification-badge" color="danger">5</ion-badge>
+    <img slot="end" src="assets/cozinheira.png" (click)="presentModal($event)">
+  </ion-toolbar>
+  <ion-toolbar color="danger">
+    <ion-searchbar placeholder="Search Chef or Dish"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="chef-box">
+    <div class="upper-box">
+      <div class="img">
+        <img class="img" src="assets/cozinheira.png">
+      </div>
+      <div class="name-text">
+        <h5>Patricia Luke</h5>
+        <p>Houston, Texas</p>
+        <p><ion-icon name="star"></ion-icon><span>4.0</span> (208 reviews)</p>
+        <p>08:30 - 21:00</p>
+      </div>
+      <div class="hour-text">
+        <p class="ion-text-end">1.0km <ion-icon color="red" name="ellipsis-vertical-outline" (click)="presentPopover($event)"></ion-icon></p>
+        <h5 class="ion-text-end">$20/Hour</h5>
+        <ion-button color="danger" size="small">Book</ion-button>
+      </div>
+    </div>
+    <div class="lower-box">
+      <div class="wrapper">
+        <div class="item" *ngFor="let item of data">
+          <img id="img" src="assets/{{item.image}}">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chef-box">
+    <div class="upper-box">
+      <div class="img">
+        <img class="img" src="assets/cozinheiro.png">
+      </div>
+      <div class="name-text">
+        <h5>Patricia Luke</h5>
+        <p>Houston, Texas</p>
+        <p><ion-icon name="star"></ion-icon><span>4.0</span> (208 reviews)</p>
+        <p>08:30 - 21:00</p>
+      </div>
+      <div class="hour-text">
+        <p class="ion-text-end">1.0km <ion-icon color="red" name="ellipsis-vertical-outline" (click)="presentPopover($event)"></ion-icon></p>
+        <h5 class="ion-text-end">$20/Hour</h5>
+        <ion-button color="danger" size="small">Book</ion-button>
+      </div>
+    </div>
+    <div class="lower-box">
+      <div class="wrapper">
+        <div class="item" *ngFor="let item of data">
+          <img id="img" src="assets/{{item.image}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

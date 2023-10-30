@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'detalhes-chef',
+    redirectTo: 'configuracoes',
     pathMatch: 'full'
   },
   {
@@ -43,6 +43,16 @@ const routes: Routes = [
     path: 'detalhes-chef',
     loadChildren: () => import('./detalhes-chef/detalhes-chef.module').then( m => m.DetalhesChefPageModule)
   },
+  {
+    path: 'search-chef',
+    loadChildren: () => import('./search-chef/search-chef.module').then( m => m.SearchChefPageModule)
+  },
+  {
+    path: 'configuracoes',
+    loadChildren: () => import('./configuracoes/configuracoes.module').then( m => m.ConfiguracoesPageModule)
+  },
+
+
 
 
 

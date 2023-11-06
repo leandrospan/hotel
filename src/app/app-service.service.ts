@@ -24,4 +24,8 @@ export class AppServiceService {
   getAllPagamentos(): Observable<any> {
     return this.http.get('assets/pagamento.json');
   }
+
+  getAllSuasOrdens(): Observable<any> {
+    return this.http.get('assets/yourOrder.json');
+  }
 }

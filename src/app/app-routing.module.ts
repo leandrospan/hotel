@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'configuracoes',
+    redirectTo: 'ordem',
     pathMatch: 'full'
   },
   {
@@ -51,6 +51,11 @@ const routes: Routes = [
     path: 'configuracoes',
     loadChildren: () => import('./configuracoes/configuracoes.module').then( m => m.ConfiguracoesPageModule)
   },
+  {
+    path: 'ordem',
+    loadChildren: () => import('./ordem/ordem.module').then( m => m.OrdemPageModule)
+  },
+
 
 
 

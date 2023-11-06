@@ -10,9 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { Perfil1Component } from './perfil1/perfil1.component';
 import { MenuperfilComponent } from './menuperfil/menuperfil.component';
+import { CoupanComponent } from './coupan/coupan.component';
 
 @NgModule({
-  declarations: [MenuperfilComponent, Perfil1Component, AppComponent],
+  declarations: [CoupanComponent, MenuperfilComponent, Perfil1Component, AppComponent],
   imports: [ HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

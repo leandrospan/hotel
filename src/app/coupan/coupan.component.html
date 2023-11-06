@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Coupan Code</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="chef-box">
+    <div class="upper-box">
+        <h2>Add Coupan Code Below</h2>
+        <ion-item>
+          <ion-label position="floating">Code</ion-label>
+          <ion-input name="code"></ion-input>
+        </ion-item>
+        <div>
+          <ion-button expand="full" color="success" (click)="apply()">Apply</ion-button>
+        </div>
+    </div>
+  </div>
+</ion-content>
